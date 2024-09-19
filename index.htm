@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+   body{
+        height: 100vh;
+        width: 100%;
+        margin: 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+    input{
+        margin: 10px;
+    }
+    .content{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+     
+    }
+</style>
+<body id="body">
+
+   <div class="content">
+    <input type="number" id="a">
+    +
+    <input type="number" id="b">
+    <button id="btn" onclick="cem()">Cem</button>
+   </div>
+    <span id="ntc"></span>
+
+    <script>
+        const a = document.getElementById('a')
+        const b = document.getElementById('b')
+        const ntc = document.getElementById('ntc')
+        const body = document.getElementById('body')
+        const btn = document.getElementById('btn')
+        
+     function cem(){
+        if (document.fullscreenElement) {
+        document.exitFullscreen(); 
+    } else {
+        document.documentElement.requestFullscreen(); 
+        body.style.backgroundImage = 'none'
+    }
+let cemle=+a.value + +b.value
+if(cemle > 4){
+ body.style.backgroundImage = 'url("w7.gif")'
+ a.style.display='none'
+ b.style.display='none'
+ btn.style.display='none'
+}
+
+     }
+    </script>
+</body>
+
+</html>
